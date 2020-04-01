@@ -206,7 +206,7 @@ class MigrationDiffCommand extends AbstractCommand
                 $platform->setIdentifierQuoting(false);
             }
             $migrationsUp[$name]    = $platform->getModifyDatabaseDDL($databaseDiff);
-            $migrationsDown[$name]  = $platform->getModifyDatabaseDDL($databaseDiff->getReverseDiff());
+//            $migrationsDown[$name]  = $platform->getModifyDatabaseDDL($databaseDiff->getReverseDiff());
         }
 
         if (!$migrationsUp) {

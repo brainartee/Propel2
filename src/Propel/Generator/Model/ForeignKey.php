@@ -435,7 +435,7 @@ class ForeignKey extends MappingModel
     public function getForeignTable()
     {
         if ($database = $this->parentTable->getDatabase()) {
-            return $database->getTable($this->getForeignTableName());
+            return $database->getTable($this->getForeignTableName()) ?? $database->getTable($this->getForeignTableCommonName());
         }
     }
 
