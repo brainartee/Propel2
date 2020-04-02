@@ -726,6 +726,7 @@ class Table extends ScopedMappingModel implements IdMethod
         foreach ($this->foreignKeys as $foreignKey) {
 
             // table referrers
+            // if no schema table found, then trying to find without schema
             $foreignTable = $this->database->getTable($foreignKey->getForeignTableName()) ?? $this->database->getTable($foreignKey->getForeignTableCommonName());
 
             if (null !== $foreignTable) {
